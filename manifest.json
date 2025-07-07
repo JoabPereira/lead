@@ -1,0 +1,62 @@
+{
+  "manifest_version": 2,
+  "name": "Leadbet",
+  "homepage_url": "https://www.leadbet.com.br",
+  "description": "Maximize suas conversões no WhatsApp com Leadbet!",
+  "default_locale": "pt_BR",
+  "version": "2.2.1",
+  "permissions": [
+    "tabs",
+    "storage",
+    "unlimitedStorage",
+    "*://web.whatsapp.com/*"
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://web.whatsapp.com/*"
+      ],
+      "js": [
+        "js/content-script.js"
+      ],
+      "css": [
+        "css/styles.css"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Leadbet",
+    "default_icon": {
+      "128": "icons/128.png"
+    }
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    "js/wapi.js"
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F",
+        "linux": "Ctrl+Shift+F",
+        "windows": "Alt+Shift+F"
+      },
+      "description": "Abre Leadbet"
+    }
+  },
+  "content_security_policy": "script-src 'self' ; object-src 'self'"
+}
