@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Leadbet",
-  "homepage_url": "https://www.leadbet.com.br",
+  "homepage_url": "https://joabpereira.github.io/lead/",
   "description": "Maximize suas conversões no WhatsApp com Leadbet!",
   "default_locale": "pt_BR",
   "version": "2.2.1",
@@ -18,22 +18,14 @@
     "128": "icons/128.png"
   },
   "background": {
-    "scripts": [
-      "js/background.js"
-    ],
+    "scripts": ["js/background.js"],
     "persistent": true
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://web.whatsapp.com/*"
-      ],
-      "js": [
-        "js/content-script.js"
-      ],
-      "css": [
-        "css/styles.css"
-      ]
+      "matches": ["*://web.whatsapp.com/*"],
+      "js": ["js/content-script.js"],
+      "css": ["css/styles.css"]
     }
   ],
   "browser_action": {
@@ -44,9 +36,7 @@
     }
   },
   "options_page": "options.html",
-  "web_accessible_resources": [
-    "js/wapi.js"
-  ],
+  "web_accessible_resources": ["js/wapi.js"],
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
